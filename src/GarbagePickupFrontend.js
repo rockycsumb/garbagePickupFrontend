@@ -3,7 +3,7 @@ import io from "socket.io-client";
 import { FaTrashAlt, FaPlay, FaStop, FaPause } from "react-icons/fa";
 import "./garbageFrontendStyle.css";
 
-const socket = io.connect("https://2lwnnj-3000.csb.app");
+const socket = io.connect("http://localhost:3000"); //https://2lwnnj-3000.csb.app
 
 const GarbagePickupFrontend = (props) => {
   const [trashCanCss, setTrashCanCss] = useState("trash-icon");

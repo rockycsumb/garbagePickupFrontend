@@ -1,5 +1,6 @@
-
-import GarbagePickupFrontend from './GarbagePickupFrontend';
+import logo from "./logo.svg";
+import "./App.css";
+import GarbagePickupFrontend from "./GarbagePickupFrontend";
 
 function App() {
   return (
