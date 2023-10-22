@@ -1,11 +1,11 @@
 import { useRef, useEffect, useState } from "react";
 import io from "socket.io-client";
 import { FaTrashAlt, FaPlay, FaStop, FaPause } from "react-icons/fa";
-import "./garbageStyle.css";
+import "./garbageFrontendStyle.css";
 
-const socket = io.connect("http://localhost:3000/");
+const socket = io.connect("https://2lwnnj-3000.csb.app");
 
-const GarbagePickup = (props) => {
+const GarbagePickupFrontend = (props) => {
   const [trashCanCss, setTrashCanCss] = useState("trash-icon");
   const [modelStatus, setModelStatus] = useState("model not loaded");
   const [garbageStatus, setGarbageStatus] = useState(
@@ -13,12 +13,12 @@ const GarbagePickup = (props) => {
   );
   useEffect(() => {
     socket.on("pickup_status", (data) => {
-      if (data === "picking_up") {
+      if (data === "emptying_trash") {
         setTrashCanCss("trash-icon trash-icon-empty");
         setGarbageStatus("Emptying trash can!");
-      } else {
+      } else if (data === "picked_up") {
         setTrashCanCss("trash-icon");
-        setGarbageStatus("Emptying trash can!");
+        setGarbageStatus("Emptied Trash!");
       }
     });
 
@@ -33,7 +33,6 @@ const GarbagePickup = (props) => {
         <div className="top-container">
           <div className="top-title">
             <h2>Garbage Can Pickup</h2>
-            <p>{modelStatus}</p>
           </div>
         </div>
         <div className="graphic-display">
@@ -45,4 +44,4 @@ const GarbagePickup = (props) => {
   );
 };
 
-export default GarbagePickup;
+export default GarbagePickupFrontend;

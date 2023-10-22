@@ -1,10 +1,10 @@
 
-import GarbagePickup from './GarbagePickup';
+import GarbagePickupFrontend from './GarbagePickupFrontend';
 
 function App() {
   return (
     <div className="App">
-      <GarbagePickup />
+      <GarbagePickupFrontend />
     </div>
   );
 }
