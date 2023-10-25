@@ -5,6 +5,11 @@ body {
     display: flex;
     justify-content: center;
   }
+
+  .container-outer {
+    margin-top:65px;
+
+  }
   
   .buttonControls {
     margin-top: 25px;

@@ -29,6 +29,7 @@ const GarbagePickupFrontend = (props) => {
 
   return (
     <>
+    <div className="container-outer">
       <div className="container-small-app-viewer">
         <div className="top-container">
           <div className="top-title">
@@ -39,6 +40,7 @@ const GarbagePickupFrontend = (props) => {
           <p>{garbageStatus}</p>
           <FaTrashAlt className={trashCanCss} />
         </div>
+      </div>
       </div>
     </>
   );
